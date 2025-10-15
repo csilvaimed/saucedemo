@@ -1,9 +1,16 @@
-# Maven / IntelliJ
-target/
+# 🧰 Configuración del IDE
 .idea/
 *.iml
+
+# ⚙️ Compilación Maven
+target/
+
+# 🧪 Reportes y resultados de prueba
+test-output/
+reports/
+extent-report.html
 *.log
 
-# OS
+# 📁 Sistema operativo
 .DS_Store
 Thumbs.db
