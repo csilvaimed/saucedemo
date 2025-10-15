@@ -3,10 +3,10 @@ package test;
 import base.BaseTest;
 import org.testng.Assert;
 import org.testng.annotations.Test;
-import pages.CartPage;
+import pages.CarritoPage;
 import pages.LoginPage;
-import pages.ProductsPage;
-import report.Step;
+import pages.ProductosPage;
+import report.Pasos;
 
 public class LoginTests extends BaseTest {
 
@@ -21,17 +21,17 @@ public class LoginTests extends BaseTest {
         login.clickLogin();
         login.waitForProducts();
 
-        ProductsPage products = new ProductsPage(driver);
+        ProductosPage products = new ProductosPage(driver);
         Assert.assertTrue(products.isLoaded(), "No se cargó la página Products");
         products.addFirstItemToCart();
         products.goToCart();
 
-        CartPage cart = new CartPage(driver);
+        CarritoPage cart = new CarritoPage(driver);
         Assert.assertTrue(
                 cart.containsItem("Sauce Labs Backpack"),
                 "El producto 'Sauce Labs Backpack' no está en el carrito"
         );
-        Step.pass(driver, "Producto verificado en el carrito", true);
+        Pasos.pass(driver, "Producto verificado en el carrito", true);
     }
 
     @Test(
@@ -47,7 +47,7 @@ public class LoginTests extends BaseTest {
 
         String esperado = "Epic sadface: Sorry, this user has been locked out.";
         String actual = login.getErrorText();
-        Step.pass(driver, "Mensaje de error mostrado: " + actual, true);
+        Pasos.pass(driver, "Mensaje de error mostrado: " + actual, true);
         Assert.assertEquals(actual, esperado);
     }
 }

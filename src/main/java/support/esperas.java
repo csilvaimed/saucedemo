@@ -6,11 +6,11 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 
 import java.time.Duration;
 
-public class Waits {
+public class esperas {
     private final WebDriver driver;
     private final WebDriverWait wait;
 
-    public Waits(WebDriver driver) {
+    public esperas(WebDriver driver) {
         this.driver = driver;
         this.wait = new WebDriverWait(driver, Duration.ofSeconds(12));
     }

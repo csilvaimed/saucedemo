@@ -2,20 +2,20 @@ package pages;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
-import support.Waits;
+import support.esperas;
 
-public class CheckoutInformationPage {
+public class InformacionDePagoPage {
     private final WebDriver driver;
-    private final Waits waits;
+    private final esperas waits;
 
     private final By firstName = By.id("first-name");
     private final By lastName = By.id("last-name");
     private final By zip = By.id("postal-code");
     private final By continueBtn = By.id("continue");
 
-    public CheckoutInformationPage(WebDriver driver) {
+    public InformacionDePagoPage(WebDriver driver) {
         this.driver = driver;
-        this.waits = new Waits(driver);
+        this.waits = new esperas(driver);
     }
 
     public void fill(String f, String l, String z) {

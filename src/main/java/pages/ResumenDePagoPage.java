@@ -2,17 +2,17 @@ package pages;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
-import support.Waits;
+import support.esperas;
 
-public class CheckoutOverviewPage {
+public class ResumenDePagoPage {
     private final WebDriver driver;
-    private final Waits waits;
+    private final esperas waits;
 
     private final By finishBtn = By.id("finish");
 
-    public CheckoutOverviewPage(WebDriver driver) {
+    public ResumenDePagoPage(WebDriver driver) {
         this.driver = driver;
-        this.waits = new Waits(driver);
+        this.waits = new esperas(driver);
     }
 
     public void clickFinish() {

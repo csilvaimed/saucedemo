@@ -10,7 +10,7 @@ import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.firefox.FirefoxOptions;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
-import report.Step;
+import report.Pasos;
 
 import java.nio.file.Files;
 import java.nio.file.Path;
@@ -51,7 +51,7 @@ public class BaseTest {
 
         driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(5));
         driver.manage().window().maximize();
-        Step.info(driver, "Inicio de prueba - navegador listo (" + browser + ")", true);
+        Pasos.info(driver, "Inicio de prueba - navegador listo (" + browser + ")", true);
     }
 
     private WebDriver buildEdge(boolean forceHeadless) throws Exception {
@@ -148,7 +148,7 @@ public class BaseTest {
     @AfterMethod(alwaysRun = true)
     public void tearDown() {
         if (driver != null) {
-            try { Step.info(driver, "Cierre de navegador", true); } catch (Exception ignored) {}
+            try { Pasos.info(driver, "Cierre de navegador", true); } catch (Exception ignored) {}
             driver.quit();
         }
         // Limpia el perfil temporal
@@ -161,5 +161,5 @@ public class BaseTest {
         }
     }
 
-    protected void step(String message) { Step.info(driver, message, true); }
+    protected void step(String message) { Pasos.info(driver, message, true); }
 }

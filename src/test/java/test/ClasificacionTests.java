@@ -4,10 +4,10 @@ import base.BaseTest;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 import pages.LoginPage;
-import pages.ProductsPage;
-import report.Step;
+import pages.ProductosPage;
+import report.Pasos;
 
-public class SortTests extends BaseTest {
+public class ClasificacionTests extends BaseTest {
 
     @Test(
             testName = "Script #3: Ordenar por precio (de mayor a menor)",
@@ -20,14 +20,14 @@ public class SortTests extends BaseTest {
                 .clickLogin();
         new LoginPage(driver).waitForProducts();
 
-        ProductsPage products = new ProductsPage(driver);
+        ProductosPage products = new ProductosPage(driver);
         Assert.assertTrue(products.isLoaded(), "No se cargó Products");
 
         products.sortByPriceHighToLow();
         double first = products.getFirstPrice();
         double last = products.getLastPrice();
 
-        Step.pass(driver, String.format("Primer precio: %.2f | Último: %.2f", first, last), true);
+        Pasos.pass(driver, String.format("Primer precio: %.2f | Último: %.2f", first, last), true);
         Assert.assertTrue(first > last, "El orden de precios no es correcto");
     }
 }

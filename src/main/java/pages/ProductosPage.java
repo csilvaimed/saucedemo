@@ -3,14 +3,14 @@ package pages;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
-import support.Waits;
+import support.esperas;
 
 
 import java.util.List;
 
-public class ProductsPage {
+public class ProductosPage {
     private final WebDriver driver;
-    private final Waits waits;
+    private final esperas waits;
 
     private final By title = By.cssSelector(".title");
     private final By firstItemAddBtn = By.cssSelector(".inventory_list .inventory_item button.btn");
@@ -20,9 +20,9 @@ public class ProductsPage {
     private final By optionHiLo = By.cssSelector(".product_sort_container option[value='hilo']");
     private final By itemPrices = By.cssSelector(".inventory_item_price");
 
-    public ProductsPage(WebDriver driver) {
+    public ProductosPage(WebDriver driver) {
         this.driver = driver;
-        this.waits = new Waits(driver);
+        this.waits = new esperas(driver);
     }
 
     public boolean isLoaded() {

@@ -2,18 +2,18 @@ package pages;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
-import support.Waits;
+import support.esperas;
 
-public class CartPage {
+public class CarritoPage {
     private final WebDriver driver;
-    private final Waits waits;
+    private final esperas waits;
 
     private final By cartItemNames = By.cssSelector(".cart_item .inventory_item_name");
     private final By checkoutBtn = By.id("checkout");
 
-    public CartPage(WebDriver driver) {
+    public CarritoPage(WebDriver driver) {
         this.driver = driver;
-        this.waits = new Waits(driver);
+        this.waits = new esperas(driver);
     }
 
     public boolean containsItem(String name) {

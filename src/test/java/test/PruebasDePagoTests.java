@@ -4,9 +4,9 @@ import base.BaseTest;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 import pages.*;
-import report.Step;
+import report.Pasos;
 
-public class CheckoutTests extends BaseTest {
+public class PruebasDePagoTests extends BaseTest {
 
     @Test(
             testName = "Script #4: Flujo completo de compra E2E",
@@ -19,25 +19,25 @@ public class CheckoutTests extends BaseTest {
                 .clickLogin();
         new LoginPage(driver).waitForProducts();
 
-        ProductsPage products = new ProductsPage(driver);
+        ProductosPage products = new ProductosPage(driver);
         products.addFirstItemToCart();
         products.goToCart();
-        Step.pass(driver, "Carrito con producto", true);
+        Pasos.pass(driver, "Carrito con producto", true);
 
-        CartPage cart = new CartPage(driver);
+        CarritoPage cart = new CarritoPage(driver);
         cart.clickCheckout();
-        Step.pass(driver, "Formulario de información de compra", true);
+        Pasos.pass(driver, "Formulario de información de compra", true);
 
-        CheckoutInformationPage info = new CheckoutInformationPage(driver);
+        InformacionDePagoPage info = new InformacionDePagoPage(driver);
         info.fill("Cristóbal", "Silva", "8320000");
         info.clickContinue();
-        Step.pass(driver, "Revisión de compra", true);
+        Pasos.pass(driver, "Revisión de compra", true);
 
-        new CheckoutOverviewPage(driver).clickFinish();
-        Step.pass(driver, "Finalizar compra", true);
+        new ResumenDePagoPage(driver).clickFinish();
+        Pasos.pass(driver, "Finalizar compra", true);
 
-        String confirmation = new CheckoutCompletePage(driver).getCompleteText();
-        Step.pass(driver, "Mensaje final: " + confirmation, true);
+        String confirmation = new PagoCompletoPage(driver).getCompleteText();
+        Pasos.pass(driver, "Mensaje final: " + confirmation, true);
         Assert.assertEquals(confirmation, "Thank you for your order!");
     }
 }

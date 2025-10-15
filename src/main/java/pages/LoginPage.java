@@ -2,12 +2,12 @@ package pages;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
-import support.Waits;
+import support.esperas;
 
 public class LoginPage {
 
     private WebDriver driver;
-    private Waits waits;
+    private esperas waits;
 
     // Elementos
     private By usernameInput = By.id("user-name");
@@ -17,7 +17,7 @@ public class LoginPage {
 
     public LoginPage(WebDriver driver) {
         this.driver = driver;
-        this.waits = new Waits(driver);
+        this.waits = new esperas(driver);
     }
 
     public LoginPage open() {
