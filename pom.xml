@@ -14,112 +14,38 @@
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
     </properties>
 
-<dependencies>
-    <!-- Dependecia para extraer archivos-->
-    <dependency>
-        <groupId>app.getxray</groupId>
-        <artifactId>xray-testng-extensions</artifactId>
-        <version>0.3.0</version>
-    </dependency>
-    <dependency>
-        <groupId>org.testng</groupId>
-        <artifactId>testng</artifactId>
-        <version>7.5.1</version>
-        <scope>compile</scope>
-    </dependency>
-    <dependency>
-        <groupId>org.apache.sshd</groupId>
-        <artifactId>sshd-core</artifactId>
-        <version>2.7.0</version>  <!-- Verifica la última versión disponible -->
-    </dependency>
+    <dependencies>
+        <!-- Selenium 4 (core + bindings de navegadores) -->
+        <dependency>
+            <groupId>org.seleniumhq.selenium</groupId>
+            <artifactId>selenium-java</artifactId>
+            <version>4.23.0</version>
+        </dependency>
 
-    <dependency>
-        <groupId>com.jcraft</groupId>
-        <artifactId>jsch</artifactId>
-        <version>0.1.55</version>
-    </dependency>
+        <!-- TestNG (runner de pruebas) -->
+        <dependency>
+            <groupId>org.testng</groupId>
+            <artifactId>testng</artifactId>
+            <version>7.5.1</version>
+            <scope>test</scope>
+        </dependency>
 
-    <dependency>
-        <groupId>org.apache.pdfbox</groupId>
-        <artifactId>pdfbox</artifactId>
-        <version>2.0.24</version> <!-- check for the latest version -->
-    </dependency>
+        <!-- WebDriverManager (gestiona drivers) -->
+        <dependency>
+            <groupId>io.github.bonigarcia</groupId>
+            <artifactId>webdrivermanager</artifactId>
+            <version>6.3.2</version>
+            <scope>test</scope>
+        </dependency>
 
-    <dependency>
-        <groupId>ch.qos.logback</groupId>
-        <artifactId>logback-classic</artifactId>
-        <version>1.2.3</version> <!-- Ensure to use the latest version -->
-    </dependency>
-
-    <dependency>
-        <groupId>org.apache.httpcomponents</groupId>
-        <artifactId>httpclient</artifactId>
-        <version>4.5.13</version>
-    </dependency>
-    <dependency>
-        <groupId>io.github.bonigarcia</groupId>
-        <artifactId>webdrivermanager</artifactId>
-        <version>6.3.2</version>
-        <scope>compile</scope>
-    </dependency>
-    <dependency>
-        <groupId>org.apache.httpcomponents</groupId>
-        <artifactId>httpmime</artifactId>
-        <version>4.5.13</version>
-    </dependency>
-    <dependency>
-        <groupId>mysql</groupId>
-        <artifactId>mysql-connector-java</artifactId>
-        <version>8.0.20</version>
-    </dependency>
-    <dependency>
-        <groupId>org.json</groupId>
-        <artifactId>json</artifactId>
-        <version>20190722</version>
-    </dependency>
-    <dependency>
-        <groupId>junit</groupId>
-        <artifactId>junit</artifactId>
-        <version>4.6</version>
-    </dependency>
-    <dependency>
-        <groupId>org.postgresql</groupId>
-        <artifactId>postgresql</artifactId>
-        <version>42.2.5</version>
-    </dependency>
-    <dependency>
-        <groupId>com.mashape.unirest</groupId>
-        <artifactId>unirest-java</artifactId>
-        <version>1.4.9</version>
-    </dependency>
-    <dependency>
-        <groupId>org.apache.httpcomponents</groupId>
-        <artifactId>httpclient</artifactId>
-        <version>4.5.13</version> <!-- Usa la versión que prefieras -->
-    </dependency>
-    <dependency>
-        <groupId>com.konghq</groupId>
-        <artifactId>unirest-java</artifactId>
-        <version>3.11.11</version>
-    </dependency>
-    <!-- Selenium 4 -->
-    <dependency>
-        <groupId>org.seleniumhq.selenium</groupId>
-        <artifactId>selenium-java</artifactId>
-        <version>4.23.0</version>
-    </dependency>
-
-    <!-- Reportería HTML con ExtentReports -->
-    <dependency>
-        <groupId>com.aventstack</groupId>
-        <artifactId>extentreports</artifactId>
-        <version>5.1.1</version>
-        <scope>test</scope>
-    </dependency>
-
-
-
-</dependencies>
+        <!-- ExtentReports (reporte HTML con screenshots) -->
+        <dependency>
+            <groupId>com.aventstack</groupId>
+            <artifactId>extentreports</artifactId>
+            <version>5.1.1</version>
+            <scope>test</scope>
+        </dependency>
+    </dependencies>
 
 <build>
     <plugins>
